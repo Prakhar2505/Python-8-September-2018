@@ -1,0 +1,9 @@
+1. What is the average Base Pay?
+2. What is the highest amount of Overtime pay?
+3. What is the name of highest paid person?
+4. How many unique job title do we have?
+5. Which are the top 5 common job roles?
+6. How salaries changed over time between different groups of people?
+7. How are base pay, overtime pay, and benefits allocated between different groups?
+8. Is there any evidence of pay discrimination based on gender in this dataset?
+9. How is budget allocated based on different groups and responsibilities?
