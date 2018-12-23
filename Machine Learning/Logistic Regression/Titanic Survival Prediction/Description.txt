@@ -1,0 +1,2 @@
+﻿Overview
+For each passenger in the test set, use the model you trained to predict whether or not they survived the sinking of the Titanic.
