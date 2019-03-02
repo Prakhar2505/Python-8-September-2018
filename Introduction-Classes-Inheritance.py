@@ -51,3 +51,37 @@ class DerivedClass(BaseClass):
         print("Hello inside derived class")
 
 obj = DerivedClass()
+
+
+## Students Class
+
+class Student:
+    def __init__(self, name, address="Dehradun", phone = 0):
+        self.name = name
+        self.address = address
+        self.phone = phone
+        print("Welcome to Brillica Services")
+
+    def display_data(self):
+        print("Printing students details")
+        print(self.name)
+        print(self.address)
+        print(self.phone)
+
+name = input('Enter your name')
+address = input('Enter your address')
+phone = input('Enter your phone number')
+if ((len(address)>1) & (len(phone)>1)):
+    phone = int(phone)
+    obj = Student(name=name, address=address, phone=phone)
+    obj.display_data()
+elif (len(address)>1 & (len(phone)==0)):
+    obj = Student(name, address)
+    obj.display_data()
+elif (len(phone)>1 & (len(address)==0)):
+    phone = int(phone)
+    obj = Student(name=name, phone=phone)
+    obj.display_data()
+else:
+    obj = Student(name)
+    obj.display_data()
