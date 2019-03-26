@@ -1,0 +1,4 @@
+1. Which movie has the highest revenue?
+2. In which language, the highest revenue movie was made?
+3. In country named 'Australia', which genre of movie is more likely to generate more business.
+4. Get all the details of movie directed by 'Christopher Nolan'.
