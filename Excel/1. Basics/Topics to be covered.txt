@@ -1,0 +1,12 @@
+1. Copy and Paste
+2. Formatting.
+3. Merge, Center.
+4. Data Type conversion.
+5. Insert/Delete new record.
+6. AutoSum.
+7. Find and Replace.
+8. Sort.
+9. Conditional Formatting.
+10. Using Basic functions.
+11. Finding Top/Bottom 10 items.
+12. Go to Special (Blank Values).
