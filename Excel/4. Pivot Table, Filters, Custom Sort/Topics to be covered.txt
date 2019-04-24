@@ -1,0 +1,5 @@
+1. Pivot Tables Introduction.
+2. Rows, Columns, Values in Pivot Table.
+3. Pivot Table Exercises - Simple, Fruits Selling, IMDB.
+4. Pivot Charts.
+5. Data Validation.
