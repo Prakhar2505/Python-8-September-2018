@@ -1,34 +1,88 @@
-# Creating a normal function in python
+## basic function
+
+
+# creating a function
 def function_name():
-    print("Hello World")
+    for i in range(4):
+        print("Hello World")
 
 function_name()
+print("How are you?")
 
-# Creating a parameterized function in python
-def sum(a,b):
-    var_3 = a + b
-    print(var_3)
+## passing a value to the function
 
-var_1, var_2 = 10, 20
-sum(var_1, var_2)
+def fun(value):
+    if (value%2 == 0):
+        return "Even number"
+    else:
+        return "Odd number"
 
-# Creating a parameterized function with default values
-def sum(a = 2, b = 3):
-    var_3 = a + b
-    print(var_3)
+var = fun(29)
+print(var)
 
-var_1, var_2 = 10, 20
 
-sum(a=var_1)
 
-# Polymorphism using *
-a, b, c = 10, 20, 30
+## Question - Create a function that takes 2 values input from the user and perform the following tasks
+# 1. Add those values and return the result inside a function.
+# 2. Check if that returned value is even or odd.
 
-def sum(*args):
-    result = 0
-    for arg in args:
-        result = result + arg
+def sum(a, b):
+    result = a+b
+    return result
+
+var1 = int(input('Enter the value of first variable:'))
+var2 = int(input('Enter the value of second variable:'))
+result = sum(var1, var2)
+print(result)
+
+if (result%2 == 0):
+    print("Even number")
+else:
+    print("Odd number")
+
+
+
+## multiple values
+
+def addition(first, second, *third):
+    result = first + second
+    for i in range(len(third)):
+        result = result + third[i]
     print(result)
 
-sum(a,b,c)
+addition(10, 20, 40, 30, 10)
 
+## default values
+first = int(input('Enter first value'))
+second = int(input('Enter second value'))
+
+def divisor(first, second=1):
+    result = first/second
+    print("Division result is: ", result)
+
+if (second==0):
+    print("You have entered second number as 0. It's invalid.")
+    divisor(first)
+else:
+    divisor(first, second)
+
+
+# ## calling a function with argument name
+
+def division(first_number, second_number):
+    result = first_number / second_number
+    print("The division result is: ", result)
+
+division(second_number=20, first_number=10)
+
+
+# create a function that takes two numbers and print their
+# multiplication result. The numbers should be float.
+
+def multiplication(first_number, second_number):
+    result = first_number * second_number
+    print('The multiplication result is: ', result)
+
+first_number = float(input('Enter the first number: '))
+second_number = float(input('Enter the second number: '))
+multiplication(first_number, second_number)
