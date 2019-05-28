@@ -1,32 +1,17 @@
 # introduction to Classes -
-class MathsFunction:
+class Student: ## user defined datatype
+    def __init__(self, name='Python'): # constructor
+        self.name = name
+        print("Hello World")
 
-    def __init__(self, a, b):
-        self.var_1 = a
-        self.var_2 = b
+    def welcome(self):
+        print(self.name)
+        print('Welcome to python programming')
 
-    def addition(self):
-        result = self.var_1 + self.var_2
-        print(result)
-
-obj = MathsFunction(10, 20)
-obj.addition()
-
-class MathFunction:
-
-    def __init__(self,a,b):
-        self.var1=int(a)
-        self.var2=int(b)
-
-    def sum(self):
-        result=self.var1+self.var2
-        print(result)
-
-a=input("Enter 1st no")
-b=input("Enter 2nd no")
-
-obj=MathFunction(a,b)
-obj.sum()
+obj = Student('Gurjas')
+obj.welcome()
+obj1 = Student()
+obj1.welcome()
 
 
 # Introduction to Inheritance
@@ -53,7 +38,7 @@ class DerivedClass(BaseClass):
 obj = DerivedClass()
 
 
-## Students Class
+## Static -- Students Class
 
 class Student:
     def __init__(self, name, address="Dehradun", phone = 0):
@@ -71,6 +56,7 @@ class Student:
 name = input('Enter your name')
 address = input('Enter your address')
 phone = input('Enter your phone number')
+
 if ((len(address)>1) & (len(phone)>1)):
     phone = int(phone)
     obj = Student(name=name, address=address, phone=phone)
@@ -85,3 +71,46 @@ elif (len(phone)>1 & (len(address)==0)):
 else:
     obj = Student(name)
     obj.display_data()
+    
+
+## Dynamic -- Students Class
+
+class Student:
+    def __init__(self, name, address="Dehradun", phone = 0):
+        self.name = name
+        self.address = address
+        self.phone = phone
+        print("Welcome to Brillica Services")
+
+    def display_data(self):
+        print("Printing students details")
+        print(self.name)
+        print(self.address)
+        print(self.phone)
+        
+        
+students_count = input('Enter the number of records you want')
+students_count = int(students_count)
+students_records = []
+for i in range(students_count):
+    print('Enter the details of student:')
+    name = input('Enter the name of the student')
+    address = input('Enter the address of the student')
+    phone = input('Enter the phone number of the student')
+
+    obj : Student
+    if ((len(address) > 1) & (len(phone) > 1)):
+        phone = int(phone)
+        obj = Student(name=name, address=address, phone=phone)
+    elif (len(address)>1 & (len(phone)==0)):
+        obj = Student(name, address)
+    elif (len(phone)>1 & (len(address)==0)):
+        phone = int(phone)
+        obj = Student(name=name, phone=phone)
+    else:
+        obj = Student(name)
+
+    students_records.append(obj)
+
+for i in students_records:
+    i.display_data()

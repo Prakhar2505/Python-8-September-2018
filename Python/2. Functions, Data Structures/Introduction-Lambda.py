@@ -1,77 +1,49 @@
-# taking input from the users.
-# understanding the use of lambda
+# # Lambda - function - Filter, Reduce, Map
 
-var1 = int(input('Enter the value of first variable: '))
-var2 = int(input('Enter the value of second variable: '))
 
-formula = lambda var1, var2: var1 * var2
+list_var = [10, 34, 15, 52, 15, 67, 32, 18]
 
-print("Multiplication result of these numbers is: ", formula(var1, var2))
 
-# understanding the use of filter
-# find the numbers divisible by 2 in the list.
-
-list_var = [10, 30, 23, 87, 92, 13, 34, 44, 69]
-
-even_numbers = lambda x: x%2 == 0
-
-result = filter(even_numbers, list_var)
-print(list(result))
+# without lambda function
+# new_list = []
 #
+# def list_filter(list_var):
+#     for i in list_var:
+#         if (i>30):
+#             # return i
+#             # print(i)
+#             new_list.append(i)
 #
-# # mapping values -
-#
-week_number = [1, 2, 3, 4, 5, 6, 0, 6, 5, 2, 3]
-#
+# list_filter(list_var)
+# print(new_list)
+
+# using lambda
+new_list = list(filter(lambda x: x>30, list_var))
+print(new_list)
+
+
+# # map
 dictionary = {
-    1 : 'Monday',
-    2 : 'Tuesday',
-    3 : 'Wednesday',
-    4 : 'Thursday',
-    5 : 'Friday',
-    6 : 'Saturday',
-    0 : 'Sunday'
+    0: 'Sunday',
+    1: 'Monday',
+    2: 'Tuesday',
+    3: 'Wednesday',
+    4: 'Thursday',
+    5: 'Friday',
+    6: 'Saturday'
 }
-#
-# def fun(week):
-#     return dictionary.get(week)
-#a
 
-condition = lambda x: dictionary.get(x)
-#
-result = list(map(condition, week_number))
-# #
-print(result)
-#
-# # Understanding reduce function
+list_weeks = [7, 2, 8, 1, 3, 1, 4, 5, 0, 2, 1, 0, 4]
+list_weekdays = list(map(lambda x:
+                         dictionary.get(x, "Not found"),
+                         list_weeks))
+
+print(list_weekdays)
+
+# reduce
 from functools import reduce
 
-list_var = [1, 2, 3, 4, 5, 7, 6]
+list_var = [9, 3, 2, 43, 9, 232, 34]
 
-condition = lambda x, y: x*y
-
-result = reduce(condition, list_var)
-print(result)
-
-# List Comprehension
-# list comprehension
-
-# print the square root of all the odd numbers from 1 to 10.
-# list_var = []
-#
-# for i in range(1, 11, 2):
-#     list_var.append(i)
-#
-# print(list_var)
-#
-# square_list = [x**2 for x in range(1, 40, 5)]
-# print(square_list)
-
-# Quiz - generate a new list using list comprehension.
-list_var = [x for x in range(0, 11)]
-print(list_var)
-
-
-# Quiz - we have 3 dogs and 4 persons, print a pair for all the possible combinations.
-# Quiz - find all the pairs of 'Labra Dog' only and save them into new list.
-
+multiplication = reduce(lambda x,y : x*y, list_var)
+print("Multiplication result is: ", multiplication)
