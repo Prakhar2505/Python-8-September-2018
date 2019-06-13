@@ -25,12 +25,21 @@ connection.execute("INSERT INTO " + TABLE_NAME + " ( " + STUDENT_NAME + ", " +
                                     "'Kapurthala, Punjab', 9810821705 ); ")
 connection.commit()
 
-connection.execute("INSERT INTO " + TABLE_NAME + " ( " + STUDENT_NAME + ", " +
-                   STUDENT_COLLEGE + ", " + STUDENT_ADDRESS + ", " +
-                    STUDENT_PHONE + " ) VALUES ( 'Pramod', 'DIT', "
-                                    "'Dehradun, Uttrakhand', 9810821705 ); " )
-connection.commit()
+## Dynamically adding values to database
+for i in range(2):
 
+    name = input('Enter your name')
+    college = input('Enter your college')
+    address = input('Enter your address')
+    phone = input('Enter your phone number')
+
+    connection.execute("INSERT INTO " + TABLE_NAME + " ( " +
+                      STUDENT_NAME + ", " +
+                      STUDENT_COLLEGE + ", " + STUDENT_ADDRESS +
+                      ", " + STUDENT_PHONE +
+                      " ) VALUES ( '"+name+"', '"+college+"', " +
+                       "'"+address+"', "+phone+" ); ")
+    connection.commit()
 
 ## retrieve record
 cursor = connection.execute("SELECT * FROM " + TABLE_NAME + " ;")
