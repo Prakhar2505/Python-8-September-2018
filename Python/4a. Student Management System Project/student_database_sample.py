@@ -27,10 +27,8 @@ def insert_record(name, college, address, phone):
                        + STUDENT_NAME + ", " +
                        STUDENT_COLLEGE + ", " +
                        STUDENT_ADDRESS + ", " +
-                       STUDENT_PHONE + " ) VALUES ( '"
-                       + name + "', '" + college +
-                       "', '" + address + "', " +
-                       str(phone) + " ); ")
+                       STUDENT_PHONE + " ) VALUES ( ?, ?, ?, ? ); ", 
+                       (name, college, address, phone))
     connection.commit()
     print("Data saved successfully.")
 
