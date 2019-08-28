@@ -1,0 +1,7 @@
+1. Which Product Category has the highest revenue share?
+2. In the year 2015-2016, which product category had the maximum number of transactions and revenue?
+3. Create a tree visual regarding Total Orders by Category.
+4. Name the best product based on profit.
+5. Share the details regarding the product which had maximum number of returns.
+6. Create a matrix visual showing the name of the state and product category transactions percentage and revenue percentage.
+7. Create a Line Chart visual showing the increase in profit over time.
