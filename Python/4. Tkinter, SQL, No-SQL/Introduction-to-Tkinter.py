@@ -113,3 +113,5 @@ division_button.pack()
 
 result_label = tk.Label(root, text="Operations result is:")
 result_label.pack()
+
+root.mainloop()
